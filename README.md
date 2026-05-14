@@ -2,6 +2,10 @@
 
 Proyecto simple de Programación Orientada a Objetos en Java.
 
+Gloris Mosquera
+Christian Velasco
+Karen Bueno
+
 ## Compilar
 
 ```bash

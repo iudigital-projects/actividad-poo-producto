@@ -1,12 +1,14 @@
 public class Producto {
-
+  
+  // ATRIBUTOS
   private String nombre;
+  private int stock;
   private String categoria;
   private double precio;
-  private int stock;
   private boolean disponible;
   private String impactoAmbiental;
-
+  
+  // CONSTRUCTOR
   public Producto(
       String nombre,
       String categoria,
@@ -21,7 +23,10 @@ public class Producto {
     this.disponible = disponible;
     this.impactoAmbiental = impactoAmbiental;
   }
-
+  
+  // MÉTODOS
+  
+  // Muestra la información del producto 
   public void mostrarInformacion() {
     System.out.println("nombre: " + nombre);
     System.out.println("categoria: " + categoria);
@@ -32,35 +37,40 @@ public class Producto {
     System.out.println("\n---------------------------\n");
   }
 
+  
+  // Calcula el descuento y lo aplica al precio
   public void aplicarDescuento(double porcentaje) {
-    this.precio -= this.precio * porcentaje / 100;
+    precio -= precio * porcentaje / 100;
     System.out.println("Nuevo precio con descuento: $" + precio);
     System.out.println("\n---------------------------\n");
   }
-
+  
+  // Agrega cantidad al stock
   public void registrarCompra(int cantidad) {
-    this.stock += cantidad;
+    stock += cantidad;
     System.out.println("Stock actualizado: " + stock);
     System.out.println("\n---------------------------\n");
   }
-
+  
+  // Cambia el estado a disponible o no disponible
   public void marcarDisponible() {
-    this.disponible = !this.disponible;
-    System.out.println("disponible: " + (this.disponible ? "Disponible" : "No Disponible"));
+    disponible = !disponible;
+    System.out.println("disponible: " + (disponible ? "Disponible" : "No Disponible"));
     System.out.println("\n---------------------------\n");
   }
 
+  // Resta cantidad al stock
   public void registrarVenta(int cantidad) {
-    if (cantidad <= this.stock) {
-      this.stock -= cantidad;
-      System.out.println("Venta realizada. Stock restante: " + this.stock);
+    if (cantidad <= stock) {
+      stock -= cantidad;
+      System.out.println("Venta realizada. Stock restante: " + stock);
       System.out.println("\n---------------------------\n");
     } else {
       System.out.println("Stock insuficiente.");
       System.out.println("\n---------------------------\n");
     }
   }
-
+  
   public void mostrarEtiquetaEcologica() {
     System.out.println("Producto ecológico con impacto ambiental: " + impactoAmbiental);
   }
